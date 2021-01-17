@@ -8,12 +8,14 @@ public class Massives {
          int [] task2 = new int[8];
          int [] task3 = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
          int [][]task4 = new int[7][7];
+         int[] task5 = {10,18,14,3,19,88,0,-15};
 
          //task1
         methodTask1(task1);
         methodTask2(task2);
         methodTask3(task3);
         methodTask4(task4);
+        methodTask5(task5);
 
     }
 
@@ -76,5 +78,21 @@ public class Massives {
             }
             System.out.println();
         }
+    }
+
+    static void methodTask5(int[] massive){
+        int min = massive[0], max=massive[0];
+        for (int i = 0; i < massive.length-1; i++) {
+                if(min>massive[i+1]) {
+                    min = massive[i + 1];
+                } else if(max<massive[i+1]){
+                    max = massive[i+1];
+                }
+        }
+        System.out.println("\n\nMin:" + min +" \nMax:"+max);
+    }
+
+    static boolean compare(int a, int b){
+        return a<b;
     }
 }
