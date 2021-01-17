@@ -59,8 +59,8 @@ public class Massives {
     static void methodTask4(int[][] massive){
         System.out.println("\n");
         int crossPoint = massive.length-1;
-        for (int i = 0, iRev = massive.length-1; i < massive.length; i++, iRev --) {
-            for (int j = 0, jRev=massive[i].length-1; j < massive[i].length; j++, jRev--) {
+        for (int i = 0; i < massive.length; i++) {
+            for (int j = 0; j < massive[i].length; j++) {
                 if(i==j){
                     massive[i][j]=1;
                     System.out.print(massive[i][j]+" ");
