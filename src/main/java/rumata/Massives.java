@@ -80,6 +80,7 @@ public class Massives {
         }
     }
 
+    //task5
     static void methodTask5(int[] massive){
         int min = massive[0], max=massive[0];
         for (int i = 1; i < massive.length; i++) {
