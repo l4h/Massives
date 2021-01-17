@@ -9,13 +9,16 @@ public class Massives {
          int [] task3 = { 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 };
          int [][]task4 = new int[7][7];
          int[] task5 = {10,18,14,3,19,88,0,-15};
-
+         int[] task6 = {3,4,2,10,5,1,4,5,4};
+         int[] task6_1 = {1,10,2,2,1,2,3,4,1};
          //task1
         methodTask1(task1);
         methodTask2(task2);
         methodTask3(task3);
         methodTask4(task4);
         methodTask5(task5);
+        System.out.println(methodTask6(task6));
+        System.out.println(methodTask6(task6_1));
 
     }
 
@@ -90,8 +93,30 @@ public class Massives {
                     max = massive[i];
                 }
         }
-        System.out.println("\n\nMin:" + min +" \nMax:"+max);
+        System.out.println("\nTask5\nMin:" + min +" \nMax:"+max);
     }
 
+    static boolean methodTask6(int[] massive){
+        int left_sum=massive[0];
+        int right_sum=massive[massive.length-1];
+
+        for (int i = 1 ; i < massive.length ; i++) {
+            left_sum+= massive[i];
+            right_sum=massive[massive.length-1];
+            for (int descending = massive.length-2; descending > i ; descending--) {
+                right_sum += massive[descending];
+                if (right_sum > left_sum) {
+                    break;
+                }
+            }
+            if(left_sum==right_sum){
+                System.out.println("\n\nTask6\nThe index of the end of the left side:"+i);
+                return true;
+            }
+        }
+
+        return false;
+
+    }
 
 }
