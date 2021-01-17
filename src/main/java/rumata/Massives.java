@@ -82,11 +82,11 @@ public class Massives {
 
     static void methodTask5(int[] massive){
         int min = massive[0], max=massive[0];
-        for (int i = 0; i < massive.length-1; i++) {
-                if(min>massive[i+1]) {
-                    min = massive[i + 1];
-                } else if(max<massive[i+1]){
-                    max = massive[i+1];
+        for (int i = 1; i < massive.length; i++) {
+                if(min>massive[i]) {
+                    min = massive[i];
+                } else if(max<massive[i]){
+                    max = massive[i];
                 }
         }
         System.out.println("\n\nMin:" + min +" \nMax:"+max);
